@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" width="80" height="80" role="img" aria-label="Institute of Digital Risk icon">
+  <!-- Cube-inspired geometric shape suggesting structure, risk and resilience -->
+  <!-- Top face of cube -->
+  <polygon points="40,8 68,22 40,36 12,22" fill="#FF6B00"/>
+  <!-- Left face of cube -->
+  <polygon points="12,22 40,36 40,64 12,50" fill="#1A1A1A"/>
+  <!-- Right face of cube -->
+  <polygon points="68,22 40,36 40,64 68,50" fill="#2D2D2D"/>
+  <!-- Accent line on top edge for depth -->
+  <polyline points="12,22 40,8 68,22" fill="none" stroke="#FF8C3A" stroke-width="1.2"/>
+</svg>

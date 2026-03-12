@@ -1,0 +1,9 @@
+Design Notes — Institute of Digital Risk (IDR) Logo
+
+Colour: The primary palette of orange (#FF6B00), black (#1A1A1A), and white was chosen to convey energy and authority — orange signals alertness and innovation (fitting for risk and AI), while black grounds the brand in seriousness and technical credibility.
+
+Typography: A clean, geometric sans-serif (Inter / Helvetica Neue) was selected for its legibility at small sizes and its association with modern technology and education; "INSTITUTE OF" is set in a tight uppercase caption to establish institutional weight, while "Digital Risk" uses a larger weight to anchor the brand name visually.
+
+Symbolism: The icon is a three-faced isometric cube — a universal symbol of structure, layered complexity, and resilience. The illuminated top face in orange represents insight and forward focus, while the two darker side faces suggest depth, risk dimensions, and the multi-faceted nature of digital threat landscapes.
+
+Scalability: The icon works as a standalone favicon at 16×16 px and as a mobile header mark, while the full lock-up (icon + wordmark) is suitable for desktop headers, print, and presentation decks.
