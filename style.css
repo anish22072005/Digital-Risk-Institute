@@ -117,7 +117,7 @@ nav {
   font-size: clamp(1.6rem, 3vw, 2.4rem);
   font-weight: 800;
   line-height: 1.2;
-  color: var(--dark);
+  color: #1A1A1A;
 }
 
 .btn {
@@ -289,123 +289,211 @@ nav {
 /* ===== SERVICES / PILLARS ===== */
 #services {
   padding: 96px 0;
-  background: var(--light);
+  background: #0D0D0D;
+  position: relative;
+  overflow: hidden;
+}
+
+#services::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,107,0,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,107,0,0.04) 1px, transparent 1px);
+  background-size: 56px 56px;
+  pointer-events: none;
 }
 
 .services-header {
   text-align: center;
-  margin-bottom: 56px;
+  margin-bottom: 64px;
+  position: relative;
+}
+
+.services-header .section-label {
+  color: var(--orange);
+}
+
+.services-header .section-title {
+  color: #FFFFFF;
+  font-size: clamp(2rem, 3.5vw, 2.8rem);
 }
 
 .services-header p {
-  color: var(--grey);
-  max-width: 560px;
-  margin: 12px auto 0;
+  color: #888888;
+  max-width: 520px;
+  margin: 14px auto 0;
+  font-size: 1rem;
+}
+
+/* Decorative orange divider under header */
+.services-header::after {
+  content: '';
+  display: block;
+  width: 48px;
+  height: 3px;
+  background: var(--orange);
+  border-radius: 2px;
+  margin: 20px auto 0;
 }
 
 .pillars-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
+  gap: 28px;
   margin-bottom: 56px;
+  position: relative;
 }
 
 .pillar-card {
-  background: var(--white);
-  border-radius: var(--radius);
-  padding: 32px 28px;
-  border-top: 3px solid var(--orange);
-  transition: transform var(--transition), box-shadow var(--transition);
+  background: #171717;
+  border: 1px solid #2A2A2A;
+  border-radius: 10px;
+  padding: 36px 30px;
+  position: relative;
+  overflow: hidden;
+  transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+}
+
+/* Top orange glow line */
+.pillar-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--orange), #FF8C3A);
+  border-radius: 10px 10px 0 0;
+}
+
+/* Subtle corner glow on hover */
+.pillar-card::after {
+  content: '';
+  position: absolute;
+  top: -60px; right: -60px;
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255,107,0,0.12) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity var(--transition);
+  pointer-events: none;
 }
 
 .pillar-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 40px rgba(0,0,0,0.09);
+  transform: translateY(-6px);
+  box-shadow: 0 20px 48px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,107,0,0.25);
+  border-color: rgba(255,107,0,0.3);
+}
+
+.pillar-card:hover::after {
+  opacity: 1;
+}
+
+.pillar-number {
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  color: var(--orange);
+  text-transform: uppercase;
+  margin-bottom: 16px;
+  opacity: 0.7;
 }
 
 .pillar-icon {
-  width: 48px;
-  height: 48px;
-  background: var(--dark);
-  border-radius: var(--radius);
+  width: 56px;
+  height: 56px;
+  background: rgba(255,107,0,0.1);
+  border: 1px solid rgba(255,107,0,0.2);
+  border-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 20px;
+  margin-bottom: 22px;
+  transition: background var(--transition), border-color var(--transition);
 }
 
-.pillar-icon svg { width: 24px; height: 24px; }
+.pillar-card:hover .pillar-icon {
+  background: rgba(255,107,0,0.18);
+  border-color: rgba(255,107,0,0.4);
+}
+
+.pillar-icon svg { width: 26px; height: 26px; }
 
 .pillar-card h3 {
-  font-size: 1.1rem;
+  font-size: 1.15rem;
   font-weight: 700;
-  margin-bottom: 10px;
-  color: var(--dark);
+  margin-bottom: 12px;
+  color: #FFFFFF;
 }
 
 .pillar-card p {
   font-size: 0.9rem;
-  color: var(--grey);
-  line-height: 1.7;
+  color: #888888;
+  line-height: 1.75;
 }
 
 /* Pipeline */
 .pipeline {
-  background: var(--dark);
-  border-radius: 10px;
-  padding: 36px 40px;
+  background: linear-gradient(135deg, #1A1A1A 0%, #222222 100%);
+  border: 1px solid #2E2E2E;
+  border-radius: 14px;
+  padding: 40px 48px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 8px;
   flex-wrap: wrap;
+  position: relative;
+}
+
+.pipeline-title {
+  width: 100%;
+  text-align: center;
+  color: #666666;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  margin-bottom: 32px;
 }
 
 .pipeline-step {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
   flex: 1;
-  min-width: 100px;
+  min-width: 90px;
 }
 
 .pipeline-step .dot {
-  width: 44px;
-  height: 44px;
+  width: 52px;
+  height: 52px;
   border-radius: 50%;
   background: var(--orange);
+  box-shadow: 0 0 20px rgba(255,107,0,0.35);
   display: flex;
   align-items: center;
   justify-content: center;
   font-weight: 800;
-  font-size: 0.85rem;
+  font-size: 0.9rem;
   color: var(--white);
 }
 
 .pipeline-step .step-label {
   font-size: 0.78rem;
   font-weight: 700;
-  color: var(--white);
-  letter-spacing: 0.1em;
+  color: #CCCCCC;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
 }
 
 .pipeline-arrow {
-  color: var(--orange);
-  font-size: 1.4rem;
+  color: #FF6B00;
+  font-size: 1.8rem;
   font-weight: 300;
   flex-shrink: 0;
-}
-
-.pipeline-title {
-  text-align: center;
-  color: var(--white);
-  font-size: 0.7rem;
-  font-weight: 600;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  margin-bottom: 28px;
   opacity: 0.6;
 }
 
